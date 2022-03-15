@@ -1,4 +1,4 @@
-# Clustering dialects from Brazilian Portuguese
+## Clustering dialects from Brazilian Portuguese
 ---
 
 #### Repository for codes and data
