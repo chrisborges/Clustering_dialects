@@ -2,7 +2,9 @@
 ## K-means clustering ##
 ########################
 
-## import Mean Sorensen
+rm(list = ls()) 
+
+## import previously calculated Mean Sorensen
 mean.sor=read.csv("Mean-Sorensen.csv", sep=",")
 mean.sor[1:10,1:16]
 # Mean Sorensen is orded by UF first
@@ -36,8 +38,6 @@ for (i in 2:5) wss[i] <- sum(kmeans(mean.sor, centers=i)$withinss)
 plot(1:5, wss, type="b", xlab="Number of Clusters",
      ylab="Within groups sum of squares")
 
-# 30 classes stabilizes at 8 ?
-
 # Compute k-means with k = number of groups
 km.dialetos=kmeans(mean.sor, centers=2) #centers = # of k
 
@@ -51,8 +51,9 @@ mydata <- data.frame(muncols, km.dialetos$cluster) # append cluster assignment
 head(mydata)
 map(mydata, 0)
 
-getwd()
-write.csv(mydata, "Cluster-with-Coords-2b.csv", row.names = F)
-
+# see cluster solution
 library(factoextra)
 fviz_cluster(km.dialetos, data=mean.sor, main="K-Means Results k=2") 
+
+#save as csv
+write.csv(mydata, "Cluster-with-Coords-2b.csv", row.names = F)
