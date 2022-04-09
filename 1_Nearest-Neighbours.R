@@ -1,10 +1,8 @@
-rm(list = ls()) 
-
-library(tidyr)
-
 #################################################
 ## Create dummy variables by nearest neighbor ##
 #################################################
+
+library(tidyr)
 
 # Calculate distance between cities
 data<-read.csv("MunicipiosXYcoor.csv", h=T, sep=",")

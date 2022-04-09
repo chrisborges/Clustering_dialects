@@ -2,8 +2,6 @@
 ## K-means clustering ##
 ########################
 
-rm(list = ls()) 
-
 ## import previously calculated Mean Sorensen
 mean.sor=read.csv("Mean-Sorensen.csv", sep=",")
 mean.sor[1:10,1:16]

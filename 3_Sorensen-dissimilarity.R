@@ -1,11 +1,9 @@
-rm(list = ls()) 
-
-library(vegan)
-library(betapart)
-
 ######################################
 ## Calculate Sorensen dissimilarity ##
 ######################################
+
+library(vegan)
+library(betapart)
 
 calcular.edist=function(i){
   setwd("~/Library/folder")
